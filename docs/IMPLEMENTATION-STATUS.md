@@ -1,4 +1,4 @@
-# Status Implementasi (v1.2.0 — Fase 2)
+# Status Implementasi (v2.0.0 — Blueprint; fungsi aplikasi = v1.2.0)
 
 ## 1. Sudah dibuat dan diuji (otomatis)
 Tampilan baru: header, tab bawah (HP) + menu "Lainnya", sidebar (laptop), mode gelap/terang/otomatis.
@@ -28,3 +28,6 @@ Sinkronisasi, backend, database cloud, RBAC server, Local Worker, eksekusi tugas
 
 ## 4. Menunggu koneksi/konfigurasi eksternal
 OpenClaw, Hermes, provider model AI, GitHub (OAuth + backend). Semua tampil "Belum Terhubung". Tidak ada karyawan AI yang bekerja.
+
+## 5. v2.0.0 Blueprint
+Ditambahkan hanya dokumen (`docs/v2/`) dan kenaikan versi. Semua komponen Part 2–5 berstatus **Rencana**. Temuan audit: aktivasi karyawan tidak terjangkau tanpa backend; data HP/desktop tidak tersinkron. Lihat Part 1.

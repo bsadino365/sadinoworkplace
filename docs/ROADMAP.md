@@ -1,7 +1,4 @@
 # Roadmap
-1. **Fase 1 Foundation**: selesai (diuji di browser emulasi).
-2. **Fase 2 Company Management**: selesai v1.2.0 — Approval, Knowledge (6 memori), Monitoring, Security, Model Manager, UI baru.
-3. **Fase 3 AI Orchestration**: adapter OpenClaw, Director, provider AI, delegasi, eksekusi tugas. (butuh backend)
-4. **Fase 4 Advisor**: adapter Hermes, akses pengetahuan bersama, tinjauan keputusan.
-5. **Fase 5 Development Infrastructure**: GitHub, Local Worker, build/test, deployment, backup, PostgreSQL.
-6. **Fase 6 Expansion**: aktivasi semua karyawan, workflow lanjut, multi-proyek, optimasi biaya, analitik.
+**Digantikan oleh `docs/v2/PART-5-ROADMAP-DAN-KRITERIA.md` (v2.0.0).** Ringkas:
+0 Keputusan & Lingkungan · 1 Fondasi (backend, DB, login, kredensial, event) · 2 AI Core + Cost Guard · 3 Sandbox & Setup Assistant · 4 AI Employees (bergelombang) · 5 Workflow Engine · 6 Self-Evolving · 7 Dashboard & Operations Map.
+Roadmap lama (v1.2.0, Fase 1–2 selesai) dipertahankan sebagai riwayat: Fase 1 Foundation dan Fase 2 Company Management sudah selesai sebagai aplikasi lokal.

@@ -1,4 +1,4 @@
-const VERSI="1.2.0";
+const VERSI="2.0.0";
 const CACHE="bawaulin-ws-v"+VERSI;
 const ASET=["./","index.html","app.js","logic.js","styles.css","manifest.json","icon-192.png","icon-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASET)).then(()=>self.skipWaiting()))});
