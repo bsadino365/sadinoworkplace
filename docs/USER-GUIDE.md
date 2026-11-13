@@ -1,10 +1,9 @@
 # Panduan Pengguna
-- **Dashboard**: ringkasan dari data nyata; progres = tugas selesai / total.
-- **Karyawan**: 13 profil AI, semua "Belum Terhubung".
-- **Proyek**: Software (GitHub belum terhubung) atau Konten (hasil di Deliverables).
-- **Tugas**: ubah status lewat menu; riwayat tercatat.
-- **Persetujuan**: isi apa, mengapa, dampak, risiko, biaya; setujui/tolak.
-- **Pengetahuan**: simpan dan cari catatan.
-- **Deliverables**: unggah file (maks 25 MB) ke proyek dan folder; unduh, lihat, cari, hapus. Nama sama = versi baru.
-- **Integrasi**: status GitHub, OpenClaw, Hermes, model AI, Local Worker.
-- **Pengaturan**: ekspor/hapus data lokal.
+Di HP: tab bawah (Dashboard, Command, Tugas, Persetujuan) dan **Lainnya** untuk modul lain. Di laptop: menu di kiri.
+- **Command Center**: tulis instruksi; belum ada Direktur AI, jadi ketuk "Jadikan tugas" (pilih proyek dulu).
+- **Karyawan**: ketuk nama untuk atur model, izin, akses proyek. Aktivasi baru bisa setelah model benar-benar terhubung (Fase 3).
+- **Persetujuan**: setiap permintaan diputuskan satu per satu; keputusan tersimpan di Pengetahuan.
+- **Monitoring & Biaya**: atur anggaran, catat pengeluaran (Aktual/Estimasi). Data token otomatis belum ada.
+- **Model AI / GitHub**: persiapan saja; tombol berbingkai putus-putus berarti belum tersedia dan akan menjelaskan alasannya.
+- **Pengaturan**: tema, ekspor/impor data, pasang aplikasi.
+Jangan memasukkan API key atau token; aplikasi akan menolaknya.

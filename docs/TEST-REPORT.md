@@ -1,7 +1,5 @@
-# Laporan Pengujian v1.1.0
-Dijalankan di lingkungan pembuatan (Node.js 22), bukan di HP/browser:
-- `node --check` app.js, logic.js, sw.js, tes: lolos.
-- `node tests/logic.test.js`: lolos.
-- `node tests/render.test.js`: lolos (9 tampilan, escape XSS).
-- Pencarian pola secret (ghp_, sk-, password=): tidak ditemukan.
-Belum diuji: IndexedDB nyata, unggah/unduh file, instal PWA, offline, tampilan Android/laptop. Lihat IMPLEMENTATION-STATUS bagian 3.
+# Laporan Pengujian v1.2.0
+Lingkungan pembuatan: Node.js 22 dan Chromium headless (Playwright). Bukan HP Android sungguhan.
+- `npm test`: logika bisnis (tugas, persetujuan, memori & versi, provider, aktivasi karyawan, anggaran, deteksi secret, kompatibilitas data lama) lolos; render 14 modul + 4 panel, teks pengguna di-escape.
+- `python tests/e2e.py`: 37/37 lolos — dashboard, tab bawah, buat proyek/tugas, ubah status, approval, keputusan masuk Knowledge, tombol "belum tersedia", API key ditolak, panel Lainnya, 14 modul terbuka, detail karyawan, data bertahan setelah muat ulang (IndexedDB), peringatan anggaran, mode offline, sidebar laptop, tanpa scroll horizontal, tanpa error JS.
+- Belum diuji: Android sungguhan, instal PWA, unggah/unduh file di HP.

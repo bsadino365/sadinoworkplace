@@ -1,24 +1,30 @@
-# Status Implementasi (v1.1.0)
+# Status Implementasi (v1.2.0 — Fase 2)
 
-## 1. Sudah dibuat
-Dashboard, Karyawan (13 profil), Proyek, Tugas (10 status + riwayat), Persetujuan CEO, Pengetahuan (cari), Deliverables (unggah, unduh, lihat gambar/teks/PDF, hapus dengan konfirmasi, cari, filter proyek, versi, folder 01-08), Integrasi (status), Pengaturan (ekspor/hapus data), PWA (manifest, service worker, ikon, cache offline).
+## 1. Sudah dibuat dan diuji (otomatis)
+Tampilan baru: header, tab bawah (HP) + menu "Lainnya", sidebar (laptop), mode gelap/terang/otomatis.
+14 modul sesuai spesifikasi:
+- **Dashboard**: proyek, tugas, aktif, tertunda, karyawan aktif/belum terhubung, perjalanan BASECAMP→PUNCAK (dari status tugas nyata), anggaran, persetujuan menunggu, status integrasi, aktivitas.
+- **CEO Command Center**: kirim instruksi (dicatat, status "Menunggu Direktur"), ubah jadi tugas manual.
+- **Organisasi**: CEO, OpenClaw, Hermes, 5 departemen.
+- **Karyawan**: 13 profil, pilih model, izin (7 jenis), akses proyek, syarat aktivasi. Tombol aktifkan = belum tersedia.
+- **Tugas**: 10 status, filter, penanggung jawab, riwayat.
+- **Proyek**: tambah, detail (tim, anggaran, folder 01–08, aktivitas), status.
+- **Deliverables**: unggah/unduh/lihat/hapus, cari, filter, versi.
+- **Pengetahuan**: 6 jenis memori, cari, edit dengan riwayat versi, keputusan CEO otomatis masuk memori.
+- **Model AI**: daftar provider, utama/cadangan, aktif/nonaktif, routing per jenis pekerjaan. Tidak ada kolom API key.
+- **GitHub**: status, repo per proyek software (PRIVATE default), ajukan ubah visibilitas (persetujuan nyata). Connect/Branch/Commit/Push = belum tersedia dengan alasan.
+- **Persetujuan**: 10 kategori, filter, setujui/tolak (tidak otomatis).
+- **Monitoring & Biaya**: anggaran bulanan, batas peringatan, catat pengeluaran (Aktual/Estimasi dipisah), biaya per proyek. Token/biaya per model = "Belum ada data".
+- **Keamanan**: pemeriksaan konfigurasi, matriks izin, audit aktivitas, perubahan penting. Input mirip API key/token ditolak.
+- **Pengaturan**: tema, ekspor/impor JSON, pasang PWA, hapus data.
 
-## 2. Sudah diuji dan berhasil (otomatis, `npm test`)
-- Aturan bisnis: buat tugas, ubah status, persetujuan (tidak otomatis), hitung progres, pengetahuan.
-- Kompatibilitas data lama (v1.0.0) saat dimuat.
-- Validasi file, kategori, versi file, pencarian/filter file.
-- 9 tampilan berhasil dirender; teks pengguna di-escape.
-- Sintaks semua file JS (`node --check`).
+Pengujian: `npm test` (logika + render 14 modul) dan `python tests/e2e.py` (Chromium headless: klik tombol, simpan, muat ulang, offline, layar HP 390px dan laptop 1280px).
 
-## 3. Sudah dibuat tetapi belum diuji
-Alasan: butuh browser/HP sungguhan, tidak tersedia di lingkungan pembuatan.
-- Penyimpanan IndexedDB dan data tetap ada setelah aplikasi dibuka ulang.
-- Unggah/unduh/lihat file Deliverables.
-- Tampilan Android dan laptop, navigasi bawah/sidebar.
-- Instal PWA dan fallback offline.
+## 2. Sudah dibuat tetapi belum diuji
+Perangkat Android sungguhan (hanya emulasi ukuran layar), instal PWA di HP, unggah/unduh file di HP.
 
-## 4. Belum dibuat
-Memori 6 jenis (baru Pengetahuan umum), AI Model Manager, Monitoring & Finance, Security Center (RBAC), sinkronisasi, Local Worker, backend, database cloud.
+## 3. Belum dibuat
+Sinkronisasi, backend, database cloud, RBAC server, Local Worker, eksekusi tugas oleh AI.
 
-## 5. Menunggu koneksi/konfigurasi eksternal
-GitHub (OAuth + backend), OpenClaw, Hermes, provider model AI. Semua tampil "Belum Terhubung". Tidak ada karyawan AI yang bekerja.
+## 4. Menunggu koneksi/konfigurasi eksternal
+OpenClaw, Hermes, provider model AI, GitHub (OAuth + backend). Semua tampil "Belum Terhubung". Tidak ada karyawan AI yang bekerja.
