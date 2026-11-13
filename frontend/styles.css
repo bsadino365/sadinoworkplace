@@ -1,0 +1,18 @@
+:root{--bg:#0f172a;--c:#1e293b;--t:#e2e8f0;--m:#94a3b8;--a:#22c55e;--r:#ef4444}
+@media(prefers-color-scheme:light){:root{--bg:#f8fafc;--c:#fff;--t:#0f172a;--m:#64748b}}
+*{box-sizing:border-box}body{margin:0;font:15px system-ui,sans-serif;background:var(--bg);color:var(--t);padding-bottom:64px}
+header{padding:14px 16px;border-bottom:1px solid #33415544}header b{color:var(--a)}
+main{padding:12px;max-width:760px;margin:auto}h2{margin:8px 0}h3{margin:0 0 8px}
+.card{background:var(--c);border-radius:12px;padding:12px;margin:8px 0;display:block}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.grid .card{text-align:center;margin:0}.grid b{font-size:22px;display:block}
+small{color:var(--m)}input,select,textarea,button{width:100%;margin:4px 0;padding:10px;border-radius:8px;border:1px solid #47556988;background:var(--bg);color:var(--t);font:inherit}
+button{background:var(--a);color:#06220f;border:0;font-weight:600;cursor:pointer}button.ghost{background:transparent;color:var(--t);border:1px solid #47556988}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}.row button{width:auto;flex:1}
+.b{font-size:11px;padding:2px 8px;border-radius:99px;background:#47556955}.b.bad{background:#ef444433;color:var(--r)}
+.bar{height:8px;background:#47556955;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--a)}
+.path{display:flex;justify-content:space-between;text-align:center;font-size:10px;margin-top:10px;color:var(--m)}.path b{font-size:16px;color:var(--t)}
+.empty{color:var(--m);text-align:center;padding:12px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;overflow-x:auto;background:var(--c);border-top:1px solid #33415566;z-index:5}
+nav a{flex:1;min-width:84px;text-align:center;padding:14px 6px;color:var(--m);text-decoration:none;font-size:13px}nav a.on{color:var(--a);font-weight:700}
+#toast{position:fixed;bottom:76px;left:50%;transform:translateX(-50%);background:var(--a);color:#06220f;padding:8px 16px;border-radius:99px;z-index:9}
+@media(min-width:900px){body{padding:0 0 0 190px}nav{top:0;bottom:auto;right:auto;width:190px;height:100vh;flex-direction:column;border-top:0;border-right:1px solid #33415566;padding-top:56px}header{position:fixed;top:0;left:0;width:190px;z-index:6}nav a{text-align:left;padding:12px 18px;flex:0}}

@@ -1,0 +1,13 @@
+const assert=require("assert");const L=require("../frontend/logic.js");
+const S={projects:[{id:"P1",name:"Bawaulin.cash",type:"software"}],tasks:[],approvals:[],kb:[],files:[]};
+const t=L.addTask(S,{title:"Buat web",projectId:"P1",owner:"AKSARA"});assert.equal(t.status,"Pending");
+const a=L.requestApproval(S,{action:"Deploy",why:"x",impact:"y",risk:"z",taskId:t.id});assert.equal(S.tasks[0].status,"Waiting Approval");
+assert.equal(L.decide(S,a.id,true).status,"Disetujui");assert.equal(S.tasks[0].status,"Approved");assert.equal(L.decide(S,a.id,false),null);
+assert.equal(L.setStatus(S,t.id,"Ngawur"),null);L.setStatus(S,t.id,"Completed");
+assert.equal(L.stats(S).pct,100);assert.equal(L.addKB(S,{title:"a",body:"b"}).version,1);
+const o=L.ensureState({projects:[{id:"P9"}],tasks:[1]});assert.deepEqual(o.files,[]);assert.equal(o.projects[0].id,"P9");assert.equal(L.ensureState().kb.length,0);
+assert(L.validFile({name:"a",size:0}));assert(L.validFile({name:"a",size:99999999}));assert.equal(L.validFile({name:"a.pdf",size:10}),"");
+assert.equal(L.category("x.zip"),"ZIP");assert.equal(L.category("a.png","image/png"),"Gambar");assert.equal(L.category("a.js"),"Source code");
+const m1=L.addFileMeta(S,{name:"a.pdf",size:10,type:"application/pdf"},{projectId:"P1"}),m2=L.addFileMeta(S,{name:"a.pdf",size:12,type:"application/pdf"},{projectId:"P1"});
+assert.equal(m2.version,2);assert.equal(m1.folder,"07_Deliverables");assert.equal(L.filterFiles(S.files,"PDF","P1").length,2);assert.equal(L.filterFiles(S.files,"zzz","").length,0);assert.equal(L.filterFiles(S.files,"","P2").length,0);
+console.log("logic OK");
