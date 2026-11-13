@@ -1,1 +1,1 @@
-{"name":"bawaulin-ai-workspace","version":"2.0.0","private":true,"scripts":{"test":"node tests/logic.test.js && node tests/render.test.js"}}
+{"name":"sadino-workplace","version":"3.1.0","private":true,"scripts":{"test":"node tests/logic.test.js && node tests/render.test.js && node tests/layout.test.js && node tests/version.test.js"}}

@@ -1,0 +1,10 @@
+const L=require("../frontend/office-layout.js"),assert=require("assert");
+const names=["AI Director","AI Setup Assistant","ARUNA","NALAR","SMRITI","KANSA","NARA","RUPA","VEDA","AKSARA","CAKRA","DHARA","SAGARA","LARAS","RAKSA"];
+assert.strictEqual(Object.keys(L.seats).length,15);names.forEach(n=>assert(L.seats[n],n));assert.strictEqual(L.rooms.length,12);
+const a=Object.values(L.seats);for(let i=0;i<a.length;i++)for(let j=i+1;j<a.length;j++)assert(Math.hypot(a[i].x-a[j].x,a[i].y-a[j].y)>=3-1e-9,"workstation < 3 tile");
+const ar=r=>(r.x1-r.x0)*(r.y1-r.y0),dep=L.rooms.filter(r=>["res","cre","eng","mkt","dsg","sec"].includes(r.id)),mx=Math.max(...dep.map(ar));
+["dir","set"].forEach(id=>assert(ar(L.rooms.find(r=>r.id===id))>mx));
+L.rooms.forEach((r,i)=>L.rooms.slice(i+1).forEach(o=>assert(r.x1<=o.x0||o.x1<=r.x0||r.y1<=o.y0||o.y1<=r.y0,"ruang tumpang tindih")));
+Object.values(L.seats).forEach(s=>{const r=L.rooms.find(o=>o.id===s.room);assert(s.x>r.x0&&s.x<r.x1&&s.y>r.y0&&s.y<r.y1)});
+Object.keys(L.spots).forEach(k=>{const r=L.rooms.find(o=>o.id===L.spotRoom[k]);L.spots[k].forEach(p=>assert(p[0]>r.x0&&p[0]<r.x1&&p[1]>r.y0&&p[1]<r.y1,k))});
+console.log("layout ok; Director/terbesar departemen = "+(99/mx).toFixed(2)+"x (handoff minta 1,5x: belum terpenuhi)");
